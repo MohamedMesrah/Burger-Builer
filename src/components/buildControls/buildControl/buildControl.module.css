@@ -1,0 +1,59 @@
+.buildControl {
+  width: 30%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px auto;
+}
+.buildControl button {
+  font: inherit;
+  font-size: large;
+  color: white;
+  display: block;
+  width: 80px;
+  padding: 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #663f00;
+  outline: none;
+}
+.plus {
+  background: rgb(126, 67, 0);
+}
+.plus:hover,
+.plus:focus {
+  background: rgba(126, 67, 0, 0.5);
+}
+.minus {
+  background: rgb(202, 148, 0);
+}
+.minus:hover,
+.minus:focus {
+  background: rgb(202, 148, 0, 0.5);
+}
+.minus:disabled {
+  background: rgb(172, 143, 77);
+  color: #524828;
+  cursor: not-allowed;
+}
+.label {
+  flex: 0 0 80px;
+  font-weight: bold;
+}
+
+@media (min-width: 0) {
+  .buildControl {
+    width: 90%;
+  }
+}
+@media (min-width: 400px) {
+  .buildControl {
+    width: 50%;
+  }
+}
+@media (min-width: 700px) {
+  .buildControl {
+    width: 400px;
+  }
+}

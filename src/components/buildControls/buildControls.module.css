@@ -1,0 +1,60 @@
+.buildControls {
+  width: 100%;
+  background-color: rgb(216, 119, 39);
+  background-size: contain;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 5px rgb(238, 110, 110);
+  margin-top: 20px;
+  padding: 10px 0;
+}
+.order {
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  background: linear-gradient(rgb(202, 148, 0), rgb(202, 165, 0));
+  outline: none;
+  border: 1px solid #663f00;
+  box-shadow: 1px 1px 2px #663f00;
+}
+.order:hover,
+.order:focus {
+  background: rgb(172, 143, 77, 0.5);
+}
+.order:disabled {
+  background: rgb(172, 143, 77);
+  color: #524828;
+  cursor: not-allowed;
+}
+.order:not(:disabled) {
+  animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 0) {
+  .order {
+    width: 90%;
+  }
+}
+@media (min-width: 400px) {
+  .order {
+    width: 50%;
+  }
+}
+@media (min-width: 700px) {
+  .order {
+    width: 400px;
+  }
+}

@@ -1,0 +1,25 @@
+.contactData {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 3px #ccc;
+  animation: appear 1s ease;
+}
+
+@media (min-width: 701px) {
+  .contactData {
+    width: 50%;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

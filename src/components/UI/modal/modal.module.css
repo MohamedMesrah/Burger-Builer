@@ -1,0 +1,54 @@
+.modal {
+  position: fixed;
+  width: 500px;
+  height: auto;
+  overflow: auto;
+  top: 10%;
+  left: calc(50% - 250px);
+  z-index: 50;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px #aaa;
+  border-radius: 5px;
+  padding: 20px;
+  transition: all 0.3s ease-out;
+  box-sizing: border-box;
+  transform: translateY(0vh);
+}
+
+@media (min-width: 300px) and (min-height: 200px) {
+  .modal {
+    width: 90%;
+    max-height: 200px;
+    left: calc(5%);
+  }
+}
+@media (min-width: 300px) and (min-height: 400px) {
+  .modal {
+    width: 90%;
+    max-height: 350px;
+    left: calc(5%);
+  }
+}
+@media (min-width: 500px) and (min-height: 401px) {
+  .modal {
+    width: 450px;
+    max-height: 350px;
+    left: calc(50% - 225px);
+  }
+}
+@media (min-width: 700px) and (min-height: 500px) {
+  .modal {
+    width: 450px;
+    max-height: 450px;
+    left: calc(50% - 225px);
+  }
+}
+@media (min-width: 1000px) and (min-height: 700px) {
+  .modal {
+    width: 500px;
+    max-height: 650px;
+    left: calc(50% - 250px);
+  }
+}

@@ -1,0 +1,71 @@
+.line {
+  background-color: rgba(210, 105, 30, 0.5);
+  width: 0;
+  height: 2px;
+  transition: width 0.5s linear;
+}
+.inputElement {
+  outline: none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font: inherit;
+  padding: 10px 30px 10px 10px;
+  margin: 16px auto 0 auto;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.inputElement:focus {
+  background-color: rgba(255, 102, 0, 0.027);
+}
+.inputElement:focus + .line {
+  background-color: rgb(207, 86, 0);
+  width: 100%;
+  margin: 0 auto;
+}
+.inputElement:not(:focus) + .line {
+  margin: 0 auto;
+}
+.input {
+  position: relative;
+}
+.error {
+  padding: 10px;
+  width: 50%;
+  height: fit-content;
+  color: red;
+  position: absolute;
+  top: 44px;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(255, 196, 0, 0.534);
+  border: 1px solid rgb(190, 190, 190);
+  box-sizing: border-box;
+  animation: error 0.7s ease-in infinite alternate;
+}
+.warning {
+  color: red;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+.success {
+  color: green;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+@keyframes error {
+  0% {
+    background-color: rgb(255, 225, 225);
+  }
+  100% {
+    background-color: rgb(255, 195, 195);
+  }
+}
+@media (max-width: 600px) {
+  .error {
+    width: 100%;
+  }
+}

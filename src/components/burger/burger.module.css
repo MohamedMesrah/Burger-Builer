@@ -1,0 +1,39 @@
+.burger {
+  height: auto;
+  margin: 0 auto 0 auto;
+  overflow: auto;
+  text-align: center;
+  font-weight: bold;
+  animation: appear 0.5s linear;
+}
+.burger::after {
+  content: "";
+  float: right;
+}
+
+@media (min-width: 0) {
+  .burger {
+    width: 100%;
+    height: 250px;
+  }
+}
+@media (min-width: 400px) {
+  .burger {
+    width: 400px;
+    height: 250px;
+  }
+}
+@media (min-width: 700px) {
+  .burger {
+    width: 550px;
+    height: 350px;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
