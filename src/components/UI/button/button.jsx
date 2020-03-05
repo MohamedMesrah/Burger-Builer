@@ -5,13 +5,14 @@ const Button = ({
   btnType = "button",
   disabled = false,
   children,
+  className,
   onClick
 }) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={[classes.button, classes[btnType]].join(" ")}
+      className={[classes.button, classes[btnType], className].join(" ")}
     >
       {children}
     </button>

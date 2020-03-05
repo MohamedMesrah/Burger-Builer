@@ -1,0 +1,19 @@
+export const ADD_INGREDIENT = "ADD_INGREDIENT";
+export const REMOVE_INGREDIENT = "REMOVE_INGREDIEN";
+export const INIT_INGREDIENT = "INIT_INGREDIENT";
+export const SET_INGREDIENT = "SET_INGREDIENT";
+export const SET_INGREDIENT_FAILD = "SET_INGREDIENT_FAILD";
+
+export const SET_ORDERS_START = "SET_ORDERS_START";
+export const SET_ORDERS_SUCCESS = "SET_ORDERS_SUCCESS";
+export const SET_ORDERS_FAILD = "SET_ORDERS_FAILD";
+export const DELETE_ORDER = "DELETE_ORDER";
+
+export const RESET = "RESET";
+
+export const AUTH = "AUTH";
+export const AUTH_START = "AUTH_START";
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_FAILD = "AUTH_FAILD";
+export const AUTH_LOGOUT = "AUTH_LOGOUT";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";

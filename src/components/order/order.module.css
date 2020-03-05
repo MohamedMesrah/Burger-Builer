@@ -7,8 +7,17 @@
   box-sizing: border-box;
   box-shadow: 0 2px 3px #ccc;
 }
-.price {
+p {
+  position: relative;
+}
+.priceText {
   color: rgb(173, 40, 0);
+}
+.delete {
+  position: absolute;
+  margin: 0 20px;
+  right: 0;
+  top: -10px;
 }
 .ingredients {
   margin: 10px;
@@ -44,7 +53,6 @@
   box-sizing: border-box;
   font-weight: bold;
   display: block;
-  /* background-color: rgb(212, 120, 0); */
 }
 
 @media (max-width: 600px) {

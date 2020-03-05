@@ -6,6 +6,7 @@ import Spinner from "../../../components/UI/spinner/spinner";
 import Input from "../../../components/UI/input/input";
 import Select from "../../../components/UI/input/select/select";
 import { validateChange } from "./validateChange";
+import { connect } from "react-redux";
 
 class ContactData extends Component {
   constructor(props) {
@@ -92,23 +93,24 @@ class ContactData extends Component {
     return !order && !allErrors && deliverymethod !== "";
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e, token) => {
     e.preventDefault();
     this.setState({ loading: true });
-    const { ingredients, totalPrice } = this.props;
+    const { ings, price, userId } = this.props;
     const { inputs, deliverymethod } = this.state;
     const order = {
-      ingredients,
+      ingredients: ings,
       deliverymethod,
-      totalPrice: totalPrice / 10,
-      time: new Date().toISOString()
+      totalPrice: price / 10,
+      time: new Date().toISOString(),
+      userId
     };
     for (const index in inputs) {
       order[inputs[index].name] = inputs[index].value;
     }
 
     axios
-      .post("/orders.json", order)
+      .post(`/orders.json?auth=${token}`, order)
       .then(() => {
         this.setState({ loading: false });
         this.props.history.push("/");
@@ -120,6 +122,7 @@ class ContactData extends Component {
 
   render() {
     const { inputs, loading, order } = this.state;
+    const { token } = this.props;
     let form = null;
     loading
       ? (form = <Spinner />)
@@ -146,7 +149,8 @@ class ContactData extends Component {
             <Button
               btnType="submit"
               disabled={!order}
-              onClick={this.handleSubmit}
+              className={classes.order}
+              onClick={e => this.handleSubmit(e, token)}
             >
               ORDER
             </Button>
@@ -162,4 +166,11 @@ class ContactData extends Component {
   }
 }
 
-export default ContactData;
+const mapStateToProps = state => ({
+  ings: state.builder.ingredients,
+  price: state.builder.totalPrice,
+  token: state.auth.token,
+  userId: state.auth.userId
+});
+
+export default connect(mapStateToProps)(ContactData);

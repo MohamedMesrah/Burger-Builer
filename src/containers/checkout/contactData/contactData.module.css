@@ -9,8 +9,16 @@
   box-shadow: 0 2px 3px #ccc;
   animation: appear 1s ease;
 }
+.order {
+  margin-top: 30px;
+}
 
 @media (min-width: 701px) {
+  .contactData {
+    width: 60%;
+  }
+}
+@media (min-width: 1000px) {
   .contactData {
     width: 50%;
   }

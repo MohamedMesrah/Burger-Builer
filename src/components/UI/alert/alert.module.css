@@ -1,0 +1,62 @@
+.alert {
+  position: relative;
+  width: 300px;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  background-color: rgb(255, 160, 51);
+  position: fixed;
+  top: 100px;
+  right: 3%;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 1s;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgb(192, 167, 167);
+  animation: scale 1s ease-out infinite;
+}
+.alert:hover {
+  animation: scale 1s ease-out forwards;
+}
+.alert::after {
+  content: "";
+  left: -12px;
+  top: 35px;
+  position: absolute;
+  border-width: 10px;
+  border-color: rgb(221, 107, 0);
+  box-shadow: 0 2px 4px rgb(255, 166, 0);
+  border-radius: 50%;
+  border-style: solid;
+}
+.alert::before {
+  content: "";
+  left: -12px;
+  top: 10px;
+  position: absolute;
+  border-width: 10px;
+  border-color: rgb(207, 100, 0);
+  box-shadow: 0 2px 4px rgb(255, 166, 0);
+  border-radius: 50%;
+  border-style: solid;
+}
+
+@media (max-width: 400px) {
+  .alert {
+    width: 90%;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}

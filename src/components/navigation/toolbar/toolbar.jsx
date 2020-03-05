@@ -3,6 +3,8 @@ import NavigationItems from "./navigationItems/navigationItems";
 import SideDrawer from "../sideDrawer/sideDrawer";
 import classes from "./toolbar.module.css";
 import SideDrawerItems from "../sideDrawer/sideDrawerItems/sideDrawerItems";
+import Logo from "../../logo/logo";
+import { connect } from "react-redux";
 
 class Toolbar extends Component {
   state = { show: false };
@@ -16,6 +18,7 @@ class Toolbar extends Component {
   };
 
   render() {
+    const { isAuth } = this.props;
     return (
       <header className={classes.toolbar}>
         <SideDrawer
@@ -24,15 +27,24 @@ class Toolbar extends Component {
           onBackDropCancel={this.handleToggle}
         >
           <nav>
-            <SideDrawerItems onNavigate={this.handleBackDropCancel} />
+            <SideDrawerItems
+              isAuth={isAuth}
+              onNavigate={this.handleBackDropCancel}
+            />
           </nav>
         </SideDrawer>
+        <Logo />
+
         <nav className={classes.nav}>
-          <NavigationItems />
+          <NavigationItems isAuth={isAuth} />
         </nav>
       </header>
     );
   }
 }
 
-export default Toolbar;
+const mapStateToProps = state => ({
+  isAuth: state.auth.token !== null
+});
+
+export default connect(mapStateToProps)(Toolbar);

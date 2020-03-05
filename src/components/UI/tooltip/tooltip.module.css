@@ -1,0 +1,39 @@
+.tooltip {
+  position: absolute;
+  right: 115%;
+  top: 20%;
+  background-color: rgb(39, 39, 39);
+  color: white;
+  border-radius: 7px;
+  padding: 3px 15px;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(39, 39, 39);
+  left: 100%;
+  margin-top: -5px;
+  top: 50%;
+}
+
+@media (min-width: 500px) {
+  .tooltip {
+    left: 115%;
+    width: fit-content;
+  }
+  .tooltip::after {
+    border-color: transparent;
+  }
+  .tooltip::before {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgb(39, 39, 39) transparent transparent;
+    right: 100%;
+    margin-top: -5px;
+    top: 50%;
+  }
+}

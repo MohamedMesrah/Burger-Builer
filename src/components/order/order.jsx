@@ -1,7 +1,8 @@
 import React from "react";
+import Button from "../UI/button/button";
 import classes from "./order.module.css";
 
-const Order = ({ totalPrice, ingredients, time }) => {
+const Order = ({ totalPrice, ingredients, time, onOrderDelete }) => {
   const regex = /[a-z]+/gi;
   return (
     <div className={classes.order}>
@@ -23,7 +24,15 @@ const Order = ({ totalPrice, ingredients, time }) => {
             )
         )}
         <p>
-          Total Price: <strong className={classes.price}>{totalPrice} $</strong>
+          Total Price:{" "}
+          <strong className={classes.priceText}>{totalPrice} $</strong>
+          <Button
+            className={classes.delete}
+            btnType="danger"
+            onClick={onOrderDelete}
+          >
+            Delete
+          </Button>
         </p>
       </div>
     </div>

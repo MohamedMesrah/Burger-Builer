@@ -1,0 +1,76 @@
+.spinner {
+  margin: 200px auto auto auto;
+}
+.noOrders {
+  margin: 20px;
+  font-size: 3.5vw;
+  color: rgba(155, 155, 155, 0.863);
+}
+.noOrders div {
+  animation: light 2s linear infinite;
+}
+.order {
+  color: rgb(221, 88, 0);
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 71px);
+  transition: 3s;
+}
+.order:not(:hover) {
+  animation: order 4s linear infinite forwards;
+}
+.order:hover {
+  background-color: rgb(253, 226, 171);
+  border-color: rgb(255, 115, 0);
+  color: rgb(255, 153, 0);
+  animation: orderHovered 0.1s linear forwards;
+}
+
+@keyframes order {
+  20% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.5);
+  }
+  40% {
+    transform: scale(1.5) rotateZ(0deg);
+  }
+  45% {
+    transform: scale(1.5) rotateZ(-10deg);
+  }
+  50% {
+    transform: scale(1.5) rotateZ(0deg);
+  }
+  55% {
+    transform: scale(1.5) rotateZ(10deg);
+  }
+  60% {
+    transform: scale(1.5) rotateZ(0deg);
+  }
+  65% {
+    transform: scale(1.5);
+  }
+  80% {
+    transform: scale(1);
+  }
+}
+@keyframes orderHovered {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+@keyframes light {
+  from {
+    text-shadow: 1px 1px 3px gray;
+  }
+  50% {
+    text-shadow: 1px 1px 3px orange;
+  }
+  to {
+    text-shadow: 1px 1px 3px gray;
+  }
+}

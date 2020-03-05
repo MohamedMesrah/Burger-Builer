@@ -58,3 +58,9 @@
     width: 400px;
   }
 }
+@media (min-height: 650px) {
+  .buildControls {
+    position: fixed;
+    bottom: 0;
+  }
+}

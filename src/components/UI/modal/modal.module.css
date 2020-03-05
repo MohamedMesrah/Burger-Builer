@@ -17,14 +17,14 @@
   transform: translateY(0vh);
 }
 
-@media (min-width: 300px) and (min-height: 200px) {
+@media (min-width: 250px) and (min-height: 200px) {
   .modal {
     width: 90%;
     max-height: 200px;
     left: calc(5%);
   }
 }
-@media (min-width: 300px) and (min-height: 400px) {
+@media (min-width: 250px) and (min-height: 400px) {
   .modal {
     width: 90%;
     max-height: 350px;

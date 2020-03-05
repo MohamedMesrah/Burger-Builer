@@ -10,7 +10,7 @@
   background-color: #fff;
   font: inherit;
   padding: 10px 30px 10px 10px;
-  margin: 16px auto 0 auto;
+  margin: 30px auto 0 auto;
   display: block;
   width: 100%;
   box-sizing: border-box;
@@ -31,7 +31,7 @@
 }
 .error {
   padding: 10px;
-  width: 50%;
+  width: fit-content;
   height: fit-content;
   color: red;
   position: absolute;
@@ -39,9 +39,20 @@
   right: 0;
   z-index: 1;
   background-color: rgba(255, 196, 0, 0.534);
-  border: 1px solid rgb(190, 190, 190);
+  border-radius: 5px;
   box-sizing: border-box;
   animation: error 0.7s ease-in infinite alternate;
+}
+.error::after {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 196, 0, 0.534) transparent;
+  position: absolute;
+  z-index: 1;
+  top: -48%;
+  right: 8px;
+  animation: errorAfter 0.7s ease-in infinite alternate;
 }
 .warning {
   color: red;
@@ -62,6 +73,14 @@
   }
   100% {
     background-color: rgb(255, 195, 195);
+  }
+}
+@keyframes errorAfter {
+  0% {
+    border-color: transparent transparent rgb(255, 225, 225) transparent;
+  }
+  100% {
+    border-color: transparent transparent rgb(255, 195, 195) transparent;
   }
 }
 @media (max-width: 600px) {
